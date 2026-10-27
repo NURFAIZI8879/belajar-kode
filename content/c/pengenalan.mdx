@@ -1,0 +1,71 @@
+---
+title: "Pengenalan C"
+slug: "pengenalan"
+order: 1
+language: "c"
+description: "Mengenal bahasa C, kegunaannya, dan cara menjalankan program C pertama."
+objectives:
+  - "Menjelaskan kegunaan bahasa C."
+  - "Menyiapkan compiler C di komputer."
+  - "Menulis dan menjalankan program C pertama."
+updatedAt: "2026-10-27"
+---
+
+## Apa itu bahasa C?
+
+C adalah bahasa pemrograman yang dibuat pada awal 1970-an. Bahasa ini dekat dengan cara komputer bekerja, tetapi tetap cukup mudah dipelajari. Banyak sistem operasi, database, dan bahasa modern memakai C atau terinspirasi darinya.
+
+C cocok dipelajari jika kamu ingin memahami dasar-dasar pemrograman, termasuk bagaimana data disimpan di memori.
+
+## Menyiapkan compiler
+
+Program C harus diubah menjadi instruksi mesin oleh **compiler**. Salah satu compiler yang populer adalah GCC. Di Windows, kamu bisa memakai MinGW-w64 atau MSYS2. Di macOS, pasang Xcode Command Line Tools. Di Linux, pasang paket `gcc` lewat package manager.
+
+Untuk memeriksa apakah compiler sudah terpasang, jalankan:
+
+```bash
+gcc --version
+```
+
+## Program pertama
+
+Buat file bernama `halo.c`, lalu isi dengan kode berikut:
+
+```c
+#include <stdio.h>
+
+int main(void) {
+    printf("Halo, dunia!\n");
+    return 0;
+}
+```
+
+Compile dan jalankan dari terminal:
+
+```bash
+gcc halo.c -o halo
+./halo
+```
+
+Di Windows, nama file hasil compile biasanya `halo.exe`, sehingga perintah menjalankannya adalah `halo.exe`.
+
+## Membaca struktur program
+
+| Bagian               | Fungsi                                                   |
+| -------------------- | -------------------------------------------------------- |
+| `#include <stdio.h>` | Memasukkan library input/output standar.                 |
+| `int main(void)`     | Titik awal program dijalankan.                           |
+| `printf(...)`        | Menampilkan teks ke layar.                               |
+| `return 0;`          | Memberi tahu sistem bahwa program selesai dengan normal. |
+
+<Callout type="tip" title="Tips pemula">
+  Akhiran `.c` wajib digunakan untuk file sumber C. Jika compiler mengeluarkan pesan error, baca
+  baris pertama yang disebutkan karena biasanya di situlah masalah dimulai.
+</Callout>
+
+## Latihan singkat
+
+<Practice
+  question="Ubah teks pada program di atas menjadi nama kamu sendiri, lalu compile dan jalankan kembali."
+  answer='Ganti "Halo, dunia!" menjadi, misalnya, "Halo, Rani!". Simpan, compile ulang dengan gcc, lalu jalankan file hasilnya.'
+/>

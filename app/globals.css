@@ -33,3 +33,121 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.mdx-content {
+  line-height: 1.8;
+  overflow-wrap: break-word;
+}
+
+.mdx-content h2 {
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  scroll-margin-top: 5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.mdx-content h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  scroll-margin-top: 5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.mdx-content p {
+  margin: 1rem 0;
+}
+
+.mdx-content ul,
+.mdx-content ol {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.mdx-content ul {
+  list-style: disc;
+}
+
+.mdx-content ol {
+  list-style: decimal;
+}
+
+.mdx-content li {
+  margin: 0.35rem 0;
+}
+
+.mdx-content a {
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.mdx-content strong {
+  font-weight: 600;
+}
+
+.mdx-content blockquote {
+  margin: 1.25rem 0;
+  border-left: 3px solid var(--primary);
+  padding-left: 1rem;
+  color: color-mix(in srgb, var(--foreground) 70%, transparent);
+  font-style: italic;
+}
+
+.mdx-content hr {
+  margin: 2rem 0;
+  border-color: var(--border);
+}
+
+.mdx-content table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.mdx-content th,
+.mdx-content td {
+  border: 1px solid var(--border);
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.mdx-content thead {
+  background: var(--muted);
+}
+
+.mdx-content th {
+  font-weight: 600;
+}
+
+.mdx-content :not(pre) > code {
+  border: 1px solid var(--border);
+  border-radius: 0.3rem;
+  background: var(--muted);
+  padding: 0.1rem 0.3rem;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.875em;
+}
+
+.mdx-content pre {
+  margin: 0;
+  font-family: var(--font-geist-mono), monospace;
+}
+
+.mdx-content pre code {
+  background: transparent;
+  padding: 0;
+  font-family: inherit;
+}
+
+.mdx-content figure {
+  margin: 0;
+}

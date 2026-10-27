@@ -1,0 +1,79 @@
+---
+title: "Pengenalan C#"
+slug: "pengenalan"
+order: 1
+language: "csharp"
+description: "Mengenal C#, ekosistem .NET, dan cara menjalankan program C# pertama."
+objectives:
+  - "Menjelaskan posisi C# di ekosistem .NET."
+  - "Menyiapkan .NET SDK."
+  - "Membuat dan menjalankan program console pertama."
+updatedAt: "2026-10-27"
+---
+
+## Apa itu C#?
+
+C# dibaca "C sharp". Bahasa ini dikembangkan oleh Microsoft dan berjalan di atas platform **.NET**. C# mendukung pemrograman berorientasi objek, pemrograman fungsional, dan pengembangan aplikasi lintas platform.
+
+C# sering dipakai untuk aplikasi desktop, web, game (Unity), dan layanan backend.
+
+## Menyiapkan .NET SDK
+
+Unduh dan pasang **.NET SDK** dari situs resmi Microsoft. Setelah selesai, buka terminal baru dan periksa versinya:
+
+```bash
+dotnet --version
+```
+
+Kalau perintah tersebut menampilkan nomor versi, berarti SDK sudah siap dipakai.
+
+## Program pertama
+
+Buat folder baru, masuk ke folder tersebut, lalu jalankan:
+
+```bash
+dotnet new console -n HaloDunia
+cd HaloDunia
+dotnet run
+```
+
+Perintah `dotnet new console` membuat proyek console. File utama bernama `Program.cs` dan isinya kira-kira seperti ini:
+
+```csharp
+Console.WriteLine("Halo, dunia!");
+```
+
+Baris tersebut memakai fitur **top-level statements**. Untuk melihat bentuk yang lebih lengkap, kamu juga bisa menulis:
+
+```csharp
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Halo, dunia!");
+    }
+}
+```
+
+## Istilah penting
+
+| Istilah     | Arti sederhana                                              |
+| ----------- | ----------------------------------------------------------- |
+| .NET        | Platform runtime dan library untuk menjalankan aplikasi C#. |
+| `Console`   | Class bawaan untuk membaca dan menulis di terminal.         |
+| `WriteLine` | Method untuk menampilkan teks lalu pindah baris.            |
+| Namespace   | Pengelompokan class agar namanya tidak bentrok.             |
+
+<Callout type="info" title="C# dan .NET">
+  C# adalah bahasanya, sedangkan .NET adalah platform yang menjalankan kode C#. Keduanya sering
+  disebut bersamaan, tetapi bukan hal yang sama.
+</Callout>
+
+## Latihan singkat
+
+<Practice
+  question="Buat program C# yang menampilkan nama dan kota asal kamu dalam dua baris terpisah."
+  answer='Gunakan dua pemanggilan Console.WriteLine, misalnya Console.WriteLine("Rani"); lalu Console.WriteLine("Bandung");.'
+/>

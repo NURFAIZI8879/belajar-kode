@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Search } from "./Search";
 import { ThemeToggle } from "./ThemeToggle";
 
 const LANGS = [
@@ -29,6 +30,7 @@ export function Navbar() {
         </div>
 
         <div className="flex items-center gap-2">
+          <Search />
           <ThemeToggle />
           <details className="relative md:hidden">
             <summary className="cursor-pointer list-none rounded-md border border-border px-3 py-1.5 text-sm">

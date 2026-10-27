@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { Navbar } from "@/components/Navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,10 +14,25 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+
 export const metadata: Metadata = {
-  title: "BelajarKode — Belajar Coding Bahasa Indonesia",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "BelajarKode — Belajar Coding Bahasa Indonesia",
+    template: "%s | BelajarKode",
+  },
   description:
     "Website belajar coding berbahasa Indonesia: C, C#, Python, PHP, dan Database (SQL). Materi orisinal, editor kode di browser, dan latihan interaktif.",
+  openGraph: {
+    type: "website",
+    locale: "id_ID",
+    siteName: "BelajarKode",
+    title: "BelajarKode — Belajar Coding Bahasa Indonesia",
+    description:
+      "Materi orisinal C, C#, Python, PHP, dan SQL dengan contoh kode yang bisa dicoba langsung di browser.",
+    url: "/",
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

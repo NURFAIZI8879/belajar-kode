@@ -1,0 +1,85 @@
+---
+title: "Variabel dan Tipe Data"
+slug: "variabel"
+order: 2
+language: "python"
+description: "Menyimpan nilai di variabel dan mengenal tipe data dasar Python."
+objectives:
+  - "Membuat dan mengubah nilai variabel."
+  - "Mengenal tipe data string, integer, float, dan boolean."
+  - "Menggunakan f-string untuk menyusun teks."
+updatedAt: "2026-10-27"
+---
+
+## Membuat variabel
+
+Variabel adalah nama yang dipakai untuk menyimpan nilai. Di Python, kamu tidak perlu menuliskan tipe datanya secara eksplisit.
+
+```python
+nama = "Sari"
+umur = 21
+nilai = 87.5
+aktif = True
+```
+
+Nilai variabel bisa diganti kapan saja:
+
+```python
+umur = 21
+umur = 22
+print(umur)  # 22
+```
+
+## Tipe data dasar
+
+| Tipe    | Contoh           | Kegunaan               |
+| ------- | ---------------- | ---------------------- |
+| `str`   | `"Halo"`         | Teks                   |
+| `int`   | `42`             | Bilangan bulat         |
+| `float` | `3.14`           | Bilangan desimal       |
+| `bool`  | `True` / `False` | Nilai benar atau salah |
+
+Untuk memeriksa tipe sebuah nilai, gunakan `type()`:
+
+```python
+print(type("Halo"))
+print(type(42))
+print(type(3.14))
+print(type(True))
+```
+
+## Menggabungkan teks
+
+Cara paling nyaman untuk menyusun teks dan variabel adalah **f-string**:
+
+```python
+nama = "Sari"
+umur = 21
+
+print(f"Halo, nama saya {nama} dan umur saya {umur} tahun.")
+```
+
+Tanda `f` di depan string memungkinkan kamu menulis ekspresi di dalam kurung kurawal.
+
+## Konversi tipe data
+
+Terkadang nilai perlu diubah tipenya:
+
+```python
+angka_teks = "10"
+angka = int(angka_teks)
+
+print(angka + 5)  # 15
+```
+
+<Callout type="tip" title="Beri nama yang jelas">
+  Gunakan nama variabel yang menggambarkan isinya, seperti `jumlah_siswa` atau `harga_total`, bukan
+  `x` atau `data1`.
+</Callout>
+
+## Latihan singkat
+
+<Practice
+  question="Buat variabel nama dan umur, lalu tampilkan kalimat 'Nama saya ... dan umur saya ... tahun.' menggunakan f-string."
+  answer='Contoh: nama = "Rani"; umur = 20; print(f"Nama saya {nama} dan umur saya {umur} tahun.")'
+/>

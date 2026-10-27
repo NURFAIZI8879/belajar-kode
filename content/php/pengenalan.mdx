@@ -1,0 +1,83 @@
+---
+title: "Pengenalan PHP"
+slug: "pengenalan"
+order: 1
+language: "php"
+description: "Mengenal PHP, menyiapkan server lokal, dan menjalankan skrip PHP pertama."
+objectives:
+  - "Menjelaskan peran PHP dalam pengembangan web."
+  - "Menjalankan PHP dengan built-in server."
+  - "Menulis skrip PHP pertama."
+updatedAt: "2026-10-27"
+---
+
+## Apa itu PHP?
+
+PHP adalah bahasa pemrograman yang dijalankan di sisi server. Kode PHP diproses di server, lalu hasilnya dikirim ke browser sebagai HTML. PHP banyak dipakai untuk membangun website dinamis, API, dan aplikasi berbasis database.
+
+## Menyiapkan PHP
+
+Cara paling cepat adalah memasang PHP lalu memakai **built-in web server**. Setelah PHP terpasang, periksa versinya:
+
+```bash
+php --version
+```
+
+Buat folder proyek, misalnya `latihan-php`, lalu masuk ke folder tersebut.
+
+## Skrip pertama
+
+Buat file `index.php`:
+
+```php
+<?php
+echo "Halo, dunia!";
+```
+
+Jalankan server lokal dari folder proyek:
+
+```bash
+php -S localhost:8000
+```
+
+Buka `http://localhost:8000` di browser. Kamu akan melihat teks **Halo, dunia!**.
+
+## Mencampur PHP dan HTML
+
+PHP dapat ditulis di tengah HTML:
+
+```php
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Latihan PHP</title>
+</head>
+<body>
+    <h1><?php echo "Selamat datang!"; ?></h1>
+</body>
+</html>
+```
+
+Bagian di antara `<?php` dan `?>` akan dieksekusi oleh server. Sisanya dikirim apa adanya ke browser.
+
+## Istilah penting
+
+| Istilah         | Arti sederhana                              |
+| --------------- | ------------------------------------------- |
+| `echo`          | Menampilkan teks ke output.                 |
+| Variabel        | Nama yang diawali `$`, misalnya `$nama`.    |
+| Built-in server | Server bawaan PHP untuk pengembangan lokal. |
+| Request         | Permintaan dari browser ke server.          |
+
+<Callout type="warning" title="Jangan buka file langsung">
+  Membuka `index.php` lewat file manager akan menampilkan kode mentah, bukan hasilnya. Jalankan
+  lewat server PHP agar kode diproses.
+</Callout>
+
+## Latihan singkat
+
+<Practice
+  question="Ubah skrip pertama agar menampilkan nama kamu, lalu jalankan ulang server PHP."
+  answer='Ganti teks di dalam echo menjadi nama kamu, misalnya echo "Halo, Rani!";. Simpan file lalu muat ulang browser.'
+/>

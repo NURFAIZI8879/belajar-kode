@@ -1,0 +1,84 @@
+---
+title: "Pengenalan Python"
+slug: "pengenalan"
+order: 1
+language: "python"
+description: "Mengenal Python, menyiapkan interpreter, dan menjalankan program pertama."
+objectives:
+  - "Menjelaskan mengapa Python cocok untuk pemula."
+  - "Memeriksa instalasi Python di komputer."
+  - "Menjalankan program Python pertama."
+updatedAt: "2026-10-27"
+---
+
+## Apa itu Python?
+
+Python adalah bahasa pemrograman yang mudah dibaca karena sintaksnya mirip bahasa manusia. Python dipakai untuk pengembangan web, analisis data, kecerdasan buatan, otomatisasi, dan banyak bidang lain.
+
+Python tidak memakai kurung kurawal untuk menandai blok kode. Sebagai gantinya, Python memakai **indentasi** (spasi di awal baris).
+
+## Memeriksa instalasi
+
+Buka terminal dan jalankan:
+
+```bash
+python --version
+```
+
+Di sebagian sistem, perintahnya adalah `python3`:
+
+```bash
+python3 --version
+```
+
+Kalau Python belum terpasang, unduh dari situs resmi python.org. Saat memasang di Windows, centang opsi **Add Python to PATH**.
+
+## Program pertama
+
+Buat file `halo.py`, lalu tulis:
+
+```python
+print("Halo, dunia!")
+```
+
+Jalankan dengan:
+
+```bash
+python halo.py
+```
+
+Kamu juga bisa mencoba langsung di mode interaktif:
+
+```bash
+python
+```
+
+Lalu ketik `print("Halo dari Python")` dan tekan Enter. Untuk keluar, ketik `exit()`.
+
+## Variabel dan tipe data sederhana
+
+```python
+nama = "Budi"
+umur = 20
+tinggi = 170.5
+sudah_belajar = True
+
+print(nama)
+print(umur)
+print(tinggi)
+print(sudah_belajar)
+```
+
+Python menebak tipe data secara otomatis. `"Budi"` adalah string, `20` adalah integer, `170.5` adalah float, dan `True` adalah boolean.
+
+<Callout type="warning" title="Perhatikan indentasi">
+  Indentasi bukan hanya hiasan di Python. Indentasi menentukan blok kode. Gunakan empat spasi secara
+  konsisten dan jangan mencampur tab dengan spasi.
+</Callout>
+
+## Latihan singkat
+
+<Practice
+  question="Buat variabel bernama kota dan isi dengan nama kota kamu, lalu tampilkan dengan print()."
+  answer='Contoh: kota = "Bandung" lalu print(kota).'
+/>
