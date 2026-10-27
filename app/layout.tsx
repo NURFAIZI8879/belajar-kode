@@ -20,9 +20,7 @@ export const metadata: Metadata = {
     "Website belajar coding berbahasa Indonesia: C, C#, Python, PHP, dan Database (SQL). Materi orisinal, editor kode di browser, dan latihan interaktif.",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{ children: React.ReactNode }>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html
       lang="id"
