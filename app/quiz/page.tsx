@@ -16,7 +16,7 @@ export default function QuizPage() {
   useEffect(() => {
     const load = async () => {
       try {
-        const res = await fetch(`/exercises/${item.slug}.json`);
+        const res = await fetch((process.env.NEXT_PUBLIC_BASE_PATH || "") + "/exercises/" + item.slug + ".json");
         if (res.ok) {
           const json = await res.json();
           setQuestions((json.questions ?? []) as QuizQuestion[]);

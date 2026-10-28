@@ -54,7 +54,7 @@ export function Search() {
 
     let cancelled = false;
 
-    fetch("/search-index.json")
+    fetch((process.env.NEXT_PUBLIC_BASE_PATH || "") + "/search-index.json")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Gagal memuat indeks.");
