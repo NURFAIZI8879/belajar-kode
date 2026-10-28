@@ -5,9 +5,9 @@ import matter from "gray-matter";
 const LANGUAGES = [
   { slug: "c", label: "C" },
   { slug: "csharp", label: "C#" },
+  { slug: "cpp", label: "C++" },
   { slug: "python", label: "Python" },
   { slug: "php", label: "PHP" },
-  { slug: "sql", label: "Database (SQL)" },
 ];
 
 const CONTENT_DIR = path.join(process.cwd(), "content");

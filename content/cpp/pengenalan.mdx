@@ -1,0 +1,87 @@
+---
+title: "Pengenalan C++"
+slug: "pengenalan"
+order: 1
+language: "cpp"
+description: "Mengenal bahasa C++, kelas, dan konsep dasar pemrograman berorientasi objek."
+objectives:
+  - "Menjelaskan perbedaan C dan C++."
+  - "Membuat kelas sederhana di C++."
+  - "Menggunakan cout untuk menampilkan teks."
+updatedAt: "2026-10-28"
+---
+
+## Apa itu C++?
+
+C++ adalah bahasa pemrograman yang dikembangkan dari bahasa C dengan tambahan fitur pemrograman berorientasi objek (OOP). C++ mendukung class, inheritance, polymorphism, template, dan STL (Standard Template Library).
+
+## Program C++ pertama
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    cout << "Halo, dunia!" << endl;
+    return 0;
+}
+```
+
+Kode `#include iostream` menyertakan pustaka input/output. `cout` digunakan untuk menampilkan teks ke layar, dan `endl` membuat baris baru.
+
+## Variabel dan tipe data
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int umur = 20;
+    double tinggi = 170.5;
+    string nama = "Budi";
+
+    cout << "Nama: " << nama << endl;
+    cout << "Umur: " << umur << endl;
+    cout << "Tinggi: " << tinggi << endl;
+    return 0;
+}
+```
+
+## Membuat class sederhana
+
+```cpp
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Mahasiswa {
+public:
+    string nama;
+    int umur;
+
+    void perkenalan() {
+        cout << "Halo, saya " << nama << ", umur " << umur << " tahun." << endl;
+    }
+};
+
+int main() {
+    Mahasiswa m;
+    m.nama = "Sari";
+    m.umur = 21;
+    m.perkenalan();
+    return 0;
+}
+```
+
+<Callout type="info" title="C++ vs C">
+  C++ kompatibel dengan sebagian besar kode C, tetapi menambahkan fitur OOP dan STL yang membuat pengembangan aplikasi besar lebih terstruktur.
+</Callout>
+
+## Latihan singkat
+
+Gunakan `cout` untuk menampilkan teks ke layar.
+
+<Practice
+  question="Perintah apa yang digunakan untuk menampilkan teks di C++?"
+  answer="cout"
+/>

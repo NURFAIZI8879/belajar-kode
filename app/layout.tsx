@@ -23,14 +23,14 @@ export const metadata: Metadata = {
     template: "%s | BelajarKode",
   },
   description:
-    "Website belajar coding berbahasa Indonesia: C, C#, Python, PHP, dan Database (SQL). Materi orisinal, editor kode di browser, dan latihan interaktif.",
+    "Website belajar coding berbahasa Indonesia: C, C#, C++, Python, dan PHP. Materi orisinal, editor kode di browser, dan latihan interaktif.",
   openGraph: {
     type: "website",
     locale: "id_ID",
     siteName: "BelajarKode",
     title: "BelajarKode — Belajar Coding Bahasa Indonesia",
     description:
-      "Materi orisinal C, C#, Python, PHP, dan SQL dengan contoh kode yang bisa dicoba langsung di browser.",
+      "Materi orisinal C, C#, C++, Python, dan PHP dengan contoh kode yang bisa dicoba langsung di browser.",
     url: "/",
   },
 };

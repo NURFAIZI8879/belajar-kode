@@ -1,0 +1,32 @@
+{
+  "language": "python",
+  "langSlug": "python",
+  "chapterSlug": "pengenalan",
+  "title": "Kuis Pengenalan Python",
+  "description": "Pilih jawaban yang benar tentang dasar Python.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "text": "Apa output dari kode: print('Halo') ?",
+      "options": ["Halo", "'Halo'", "Error", "Tidak ada output"],
+      "correctIndex": 0,
+      "explanation": "Fungsi print() menampilkan teks tanpa tanda kutip."
+    },
+    {
+      "id": "q2",
+      "type": "multiple_choice",
+      "text": "Apa tipe data dari nilai 3.14 di Python?",
+      "options": ["int", "float", "str", "bool"],
+      "correctIndex": 1,
+      "explanation": "Angka dengan titik desimal adalah float."
+    },
+    {
+      "id": "q3",
+      "type": "fill_in_blank",
+      "text": "Fungsi _______________ digunakan untuk menampilkan teks ke layar di Python.",
+      "answer": "print",
+      "hint": "Fungsi yang dimulai dengan huruf 'p' dan diakhiri dengan 't'."
+    }
+  ]
+}

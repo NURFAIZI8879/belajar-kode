@@ -17,7 +17,7 @@ const frontmatterSchema = z.object({
     .trim()
     .regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, "slug harus berupa huruf kecil dan tanda hubung"),
   order: z.number().int().positive(),
-  language: z.enum(["c", "csharp", "python", "php", "sql"]),
+  language: z.enum(["c", "csharp", "python", "php", "cpp"]),
   description: z.string().trim().min(10).max(300),
   objectives: z
     .array(z.string().trim().min(3).max(200))

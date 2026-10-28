@@ -5,9 +5,9 @@ import { ThemeToggle } from "./ThemeToggle";
 const LANGS = [
   { slug: "c", label: "C" },
   { slug: "csharp", label: "C#" },
+  { slug: "cpp", label: "C++" },
   { slug: "python", label: "Python" },
   { slug: "php", label: "PHP" },
-  { slug: "sql", label: "Database (SQL)" },
 ];
 
 export function Navbar() {

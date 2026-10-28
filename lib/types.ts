@@ -1,4 +1,4 @@
-export type LanguageSlug = "c" | "csharp" | "python" | "php" | "sql";
+export type LanguageSlug = "c" | "csharp" | "python" | "php" | "cpp";
 
 export type LanguageInfo = {
   slug: LanguageSlug;

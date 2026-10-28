@@ -6,6 +6,7 @@ import rehypePrettyCode from "rehype-pretty-code";
 import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
 import { mdxComponents } from "@/components/mdx";
+import { LessonActions } from "@/components/LessonActions";
 import { getAllLessonParams, getAdjacentLessons, getLesson } from "@/lib/content";
 import { getLanguage } from "@/lib/languages";
 
@@ -166,6 +167,8 @@ export default async function LessonPage({
           }}
         />
       </div>
+
+      <LessonActions lang={language.slug} slug={lesson.meta.slug} />
 
       <nav
         aria-label="Navigasi bab"

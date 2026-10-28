@@ -1,6 +1,6 @@
 import TryItYourself from "@/components/TryItYourself";
 
-const VALID_LANGS = ["c", "csharp", "python", "php", "sql"];
+const VALID_LANGS = ["c", "csharp", "python", "php", "cpp"];
 
 export default async function TryPage({
   searchParams,
@@ -13,7 +13,7 @@ export default async function TryPage({
 
   return (
     <section className="mx-auto w-full max-w-5xl px-4 py-8">
-      <TryItYourself language={language} />
+      <TryItYourself language={language || "python"} />
     </section>
   );
 }

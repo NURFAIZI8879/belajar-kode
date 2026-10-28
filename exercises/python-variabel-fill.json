@@ -1,0 +1,30 @@
+{
+  "language": "python",
+  "langSlug": "python",
+  "chapterSlug": "variabel",
+  "title": "Isi Bagian Kosong — Variabel Python",
+  "description": "Lengkapi bagian kosong agar kode berjalan dengan benar.",
+  "questions": [
+    {
+      "id": "f1",
+      "type": "fill_in_blank",
+      "text": "Untuk menyimpan angka 10 dalam variabel 'x', tulis: x = _______________",
+      "answer": "10",
+      "hint": "Angka bulat langsung tanpa tanda kutip."
+    },
+    {
+      "id": "f2",
+      "type": "fill_in_blank",
+      "text": "Untuk menyimpan teks 'Budi' dalam variabel 'nama', tulis: nama = _______________",
+      "answer": "\"Budi\"",
+      "hint": "Gunakan tanda kutip ganda atau tunggal di sekitar teks."
+    },
+    {
+      "id": "f3",
+      "type": "fill_in_blank",
+      "text": "Fungsi _______________ digunakan untuk menggabungkan teks dan variabel dalam satu kalimat di Python 3.",
+      "answer": "f-string",
+      "hint": "Gunakan huruf 'f' sebelum tanda kutip dalam string."
+    }
+  ]
+}

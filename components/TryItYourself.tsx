@@ -14,18 +14,24 @@ int main(void) {
     return 0;
 }`,
   csharp: `Console.WriteLine("Halo, dunia!");`,
+  cpp: `#include <iostream>
+using namespace std;
+
+int main() {
+    cout << "Halo, dunia!" << endl;
+    return 0;
+}`,
   python: `print("Halo, dunia!")`,
   php: `<?php
 echo "Halo, dunia!";`,
-  sql: `SELECT nama, kota FROM Customers ORDER BY nama ASC;`,
 };
 
 const LANGUAGE_LABELS: Record<string, string> = {
   c: "C",
   csharp: "C#",
+  cpp: "C++",
   python: "Python",
   php: "PHP",
-  sql: "SQL",
 };
 
 type RunResult = {

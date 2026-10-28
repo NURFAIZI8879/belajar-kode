@@ -7,10 +7,11 @@ const LANGUAGE_LABELS: Record<string, string> = {
   c: "C",
   csharp: "C#",
   cs: "C#",
+  cpp: "C++",
+  cplusplus: "C++",
   python: "Python",
   py: "Python",
   php: "PHP",
-  sql: "SQL",
   bash: "Terminal",
   text: "Teks",
 };
@@ -38,7 +39,7 @@ function extractText(node: ReactNode): string {
 export function MDXCodeBlock({ children, className, ...props }: PreProps) {
   const [copied, setCopied] = useState(false);
   const code = extractText(children).replace(/\n$/, "");
-  const language = props["data-language"] ?? "text";
+  const language = (props["data-language"] as string | undefined) ?? (className?.match(/language-([a-z]+)/)?.[1] || "text");
   const label = LANGUAGE_LABELS[language] ?? language;
 
   async function copyCode() {

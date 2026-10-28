@@ -1,18 +1,30 @@
 "use client";
 
+import dynamic from "next/dynamic";
+
+const MonacoEditor = dynamic(() => import("@monaco-editor/react"), { ssr: false });
+
+const LANGUAGE_LABELS: Record<string, string> = {
+  c: "C",
+  csharp: "C#",
+  cpp: "C++",
+  python: "Python",
+  php: "PHP",
+};
+
+const MONACO_LANGUAGE: Record<string, string> = {
+  c: "c",
+  csharp: "csharp",
+  cpp: "cpp",
+  python: "python",
+  php: "php",
+};
+
 type CodeEditorProps = {
   language: string;
   value: string;
   onChange?: (value: string) => void;
   readOnly?: boolean;
-};
-
-const LANGUAGE_LABELS: Record<string, string> = {
-  c: "C",
-  csharp: "C#",
-  python: "Python",
-  php: "PHP",
-  sql: "SQL",
 };
 
 export function CodeEditor({ language, value, onChange, readOnly }: CodeEditorProps) {
@@ -24,13 +36,22 @@ export function CodeEditor({ language, value, onChange, readOnly }: CodeEditorPr
         </span>
         <span className="text-xs text-foreground/40">Editor kode</span>
       </div>
-      <textarea
-        value={value}
-        onChange={(e) => onChange?.(e.target.value)}
-        readOnly={readOnly}
-        className="h-full w-full bg-[#0d1117] p-4 text-sm font-mono leading-relaxed text-zinc-100 focus:outline-none resize-none"
-        spellCheck={false}
-      />
+      <div className="flex-1 min-h-0">
+        <MonacoEditor
+          height="100%"
+          language={MONACO_LANGUAGE[language] ?? "plaintext"}
+          value={value}
+          onChange={(v) => onChange?.(v ?? "")}
+          theme="vs-dark"
+          options={{
+            readOnly: readOnly ?? false,
+            minimap: { enabled: false },
+            fontSize: 14,
+            scrollBeyondLastLine: false,
+            automaticLayout: true,
+          }}
+        />
+      </div>
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ProgressIndicator } from "@/components/ProgressIndicator";
 import { getLessonList } from "@/lib/content";
 import { LANGUAGES } from "@/lib/languages";
 
@@ -45,6 +46,7 @@ export default function Home() {
           </Link>
         ))}
       </div>
+      <ProgressIndicator />
     </section>
   );
 }

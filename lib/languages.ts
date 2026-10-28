@@ -16,6 +16,12 @@ export const LANGUAGES: LanguageInfo[] = [
       "Bangun pemahaman C# dari dasar, lalu masuk ke class, LINQ, dan penanganan exception.",
   },
   {
+    slug: "cpp",
+    label: "C++",
+    shortDescription: "Bahasa berorientasi objek dengan fitur C modern.",
+    description: "Pelajari C++: kelas, template, STL, dan pengelolaan memori modern.",
+  },
+  {
     slug: "python",
     label: "Python",
     shortDescription: "Bahasa yang mudah dibaca dan cocok untuk pemula.",
@@ -28,13 +34,6 @@ export const LANGUAGES: LanguageInfo[] = [
     shortDescription: "Bahasa server-side untuk membangun website.",
     description: "Kuasai PHP dari dasar, termasuk form, session, dan koneksi ke database.",
   },
-  {
-    slug: "sql",
-    label: "Database (SQL)",
-    shortDescription: "Cara menyimpan, mencari, dan mengelola data.",
-    description:
-      "Pelajari SQL untuk mengambil dan mengubah data: SELECT, WHERE, JOIN, GROUP BY, dan lainnya.",
-  },
 ];
 
 export function getLanguage(slug: string): LanguageInfo | undefined {
@@ -42,5 +41,5 @@ export function getLanguage(slug: string): LanguageInfo | undefined {
 }
 
 export function isLanguageSlug(slug: string): slug is LanguageSlug {
-  return LANGUAGES.some((language) => language.slug === slug);
+  return ["c", "csharp", "python", "php", "cpp"].includes(slug);
 }
