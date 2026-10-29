@@ -108,7 +108,7 @@ export default function TryItYourself({ language }: { language: string }) {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 min-h-[500px]">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 min-h-[300px] sm:min-h-[400px] md:min-h-[500px]">
         <div className="flex flex-col gap-3">
           <label className="text-sm font-semibold text-foreground/80">Kode</label>
           <CodeEditor key={language} language={language} value={code} onChange={setCode} />

@@ -151,3 +151,11 @@ body {
 .mdx-content figure {
   margin: 0;
 }
+
+@media (max-width: 640px) {
+  .mx-auto { padding-left: 1rem; padding-right: 1rem; }
+  .mdx-content h2 { font-size: 1.25rem; }
+  .mdx-content h3 { font-size: 1.05rem; }
+  .mdx-content table { font-size: 0.75rem; }
+  .mdx-content th, .mdx-content td { padding: 0.35rem 0.5rem; }
+}

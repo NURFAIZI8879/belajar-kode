@@ -13,18 +13,18 @@ const LANGS = [
 export function Navbar() {
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background/90 backdrop-blur">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3">
+      <nav className="sticky top-0 z-40 mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 bg-background/90 backdrop-blur-sm border-b border-border">
         <Link href="/" className="text-lg font-bold text-primary">
           BelajarKode
         </Link>
 
         <div className="hidden items-center gap-4 md:flex">
           {LANGS.map((l) => (
-            <Link key={l.slug} href={`/${l.slug}`} className="text-sm hover:text-primary">
+            <Link key={l.slug} href={`/${l.slug}`} className="text-sm hover:text-primary sm:text-base">
               {l.label}
             </Link>
           ))}
-          <Link href="/about" className="text-sm hover:text-primary">
+          <Link href="/about" className="text-sm hover:text-primary sm:text-base">
             Tentang
           </Link>
         </div>

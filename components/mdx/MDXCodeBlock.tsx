@@ -68,7 +68,7 @@ export function MDXCodeBlock({ children, className, ...props }: PreProps) {
           <TryItButton code={code} language={language} />
         </div>
       </div>
-      <pre {...props} className={`overflow-x-auto p-4 text-sm leading-relaxed ${className ?? ""}`}>
+      <pre {...props} className={`overflow-x-auto p-4 text-sm sm:text-base leading-relaxed ${className ?? ""}`}>
         {children}
       </pre>
     </div>

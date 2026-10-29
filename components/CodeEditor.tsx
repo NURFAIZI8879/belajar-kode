@@ -36,7 +36,7 @@ export function CodeEditor({ language, value, onChange, readOnly }: CodeEditorPr
         </span>
         <span className="text-xs text-foreground/40">Editor kode</span>
       </div>
-      <div className="flex-1 min-h-0">
+      <div className="flex-1 min-h-[300px] sm:min-h-[400px] md:min-h-[500px]">
         <MonacoEditor
           height="100%"
           language={MONACO_LANGUAGE[language] ?? "plaintext"}
