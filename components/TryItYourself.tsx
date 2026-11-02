@@ -1,7 +1,7 @@
 "use client";
 
 import "@/lib/runners/register";
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { runCode } from "@/lib/runners";
 import { CodeEditor } from "./CodeEditor";
 import { RunnerPanel } from "./RunnerPanel";
@@ -13,7 +13,13 @@ int main(void) {
     printf("Halo, dunia!\\n");
     return 0;
 }`,
-  csharp: `Console.WriteLine("Halo, dunia!");`,
+  csharp: `using System;
+
+class Program {
+    static void Main() {
+        Console.WriteLine("Halo, dunia!");
+    }
+}`,
   cpp: `#include <iostream>
 using namespace std;
 
@@ -34,6 +40,16 @@ const LANGUAGE_LABELS: Record<string, string> = {
   php: "PHP",
 };
 
+const RUNNER_NOTES: Record<string, string> = {
+  python:
+    "Kode Python dijalankan sepenuhnya di browser kamu (runtime Pyodide/WASM), bukan di server kami.",
+  c: "Kode C dikirim ke layanan kompilasi online Wandbox untuk dijalankan. Jangan gunakan untuk data sensitif.",
+  csharp:
+    "Kode C# dikirim ke layanan kompilasi online Wandbox untuk dijalankan. Jangan gunakan untuk data sensitif.",
+  cpp: "Kode C++ dikirim ke layanan kompilasi online Wandbox untuk dijalankan. Jangan gunakan untuk data sensitif.",
+  php: "Kode PHP dikirim ke layanan eksekusi online Wandbox untuk dijalankan. Jangan gunakan untuk data sensitif.",
+};
+
 type RunResult = {
   stdout: string;
   stderr: string;
@@ -42,10 +58,27 @@ type RunResult = {
 };
 
 export default function TryItYourself({ language }: { language: string }) {
-  const [code, setCode] = useState(SAMPLE_CODE[language] ?? "");
+  const [code, setCode] = useState("");
   const [stdin, setStdin] = useState("");
   const [result, setResult] = useState<RunResult | null>(null);
   const [loading, setLoading] = useState(false);
+
+  // Saat bahasa berubah (atau saat halaman dibuka), muat kode yang tepat.
+  // Kode dari tombol "Coba Sendiri" di materi disimpan di sessionStorage.
+  useEffect(() => {
+    const storedLanguage = sessionStorage.getItem("belajar-kode:try-language");
+    const storedCode = sessionStorage.getItem("belajar-kode:try-code");
+
+    if (storedCode && (!storedLanguage || storedLanguage === language)) {
+      setCode(storedCode);
+      sessionStorage.removeItem("belajar-kode:try-code");
+      sessionStorage.removeItem("belajar-kode:try-language");
+    } else {
+      setCode(SAMPLE_CODE[language] ?? "");
+    }
+
+    setResult(null);
+  }, [language]);
 
   const handleRun = useCallback(async () => {
     setLoading(true);
@@ -132,8 +165,8 @@ export default function TryItYourself({ language }: { language: string }) {
       <div className="mt-6 rounded-lg border border-border bg-muted/30 p-4 text-sm text-foreground/70">
         <p className="font-semibold">Catatan keamanan:</p>
         <p className="mt-1">
-          Kode untuk {LANGUAGE_LABELS[language] ?? language} dijalankan sepenuhnya di browser kamu
-          (runtime WASM/Web Worker), bukan di server kami.
+          {RUNNER_NOTES[language] ??
+            `Kode ${LANGUAGE_LABELS[language] ?? language} dikirim ke layanan eksekusi online untuk dijalankan.`}
         </p>
       </div>
     </section>
