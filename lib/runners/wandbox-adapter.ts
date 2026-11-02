@@ -28,8 +28,7 @@ function pickText(json: WandboxJson): string {
     (json.program_error && json.program_error.trim()) ||
     (json.compiler_error && json.compiler_error.trim()) ||
     (json.compiler_message && json.compiler_message.trim()) ||
-    (json.program_message && json.program_message.trim()) ||
-    (json.compiler_output && json.compiler_output.trim()) ||
+        (json.compiler_output && json.compiler_output.trim()) ||
         ""
   );
 }
@@ -93,7 +92,7 @@ export function createWandboxAdapter(lang: string): RunnerAdapter {
 
           if (!ok && attempt < maxAttempts && isTransient(json, res.status)) {
             lastError = stderr || `status ${json.status}`;
-            await new Promise((r) => setTimeout(r, 1500 * attempt));
+            await new Promise((r) => setTimeout(r, 2000));
             continue;
           }
 
@@ -107,7 +106,7 @@ export function createWandboxAdapter(lang: string): RunnerAdapter {
         } catch (error: unknown) {
           lastError = error instanceof Error ? error.message : "Gagal menghubungi layanan eksekusi.";
           if (attempt < maxAttempts) {
-            await new Promise((r) => setTimeout(r, 1500 * attempt));
+            await new Promise((r) => setTimeout(r, 2000));
             continue;
           }
           return {
